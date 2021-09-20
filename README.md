@@ -7,7 +7,7 @@
 **Initial key features**
 
 **Github location**
-* https://github.com/se452-group3/airline-project
+* https://github.com/se452-group3/se452-project
 
 **How conflicts will be resolved**
 * Vote will be done and majority will decide the conflict
@@ -22,4 +22,4 @@
 * Any IDE that has git, VS code, Intellij
 
 **Screen shot of working code (clean compile) in Appendix.**
-![Screenshot](screenshots/stevenla.png)s
+![Screenshot](screenshots/compilescreenshot.png)
