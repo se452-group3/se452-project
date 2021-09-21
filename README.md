@@ -13,6 +13,7 @@
 
 **How conflicts will be resolved**
 * Vote will be done and majority will decide the conflict
+* Ties decided by rock-paper-scissors (best of 3)
 
 **Communication mechanism**
 * Slack and Zoom
