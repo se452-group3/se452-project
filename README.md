@@ -1,10 +1,9 @@
 # se452-project
 
-# Steven La
-
-# Andrew Murphy
-
-# Brandon Harrington
+# Group Members
+Steven La
+Andrew Murphy
+Brandon Harrington
 
 **Project scope area**
 
