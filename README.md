@@ -4,6 +4,8 @@
 
 # Andrew Murphy
 
+# Brandon Harrington
+
 **Project scope area**
 
 **Initial key features**
