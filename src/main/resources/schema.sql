@@ -5,3 +5,6 @@ create table users (
   firstname varchar(20),
   lastname varchar(20)
 );
+
+create table profile (
+);
