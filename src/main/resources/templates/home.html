@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/header :: header(page='home')">
+    <title>Home</title>
 </head>
 <body>
-<h2>Welcome to DogParty</h2>
+    <div th:replace="fragments/header :: navbar"></div>
+
+    <div class="container-fluid">
+        <div class="row wrapper min-vh-100 flex-column flex-sm-row">
+            <div th:replace="fragments/header :: sidebar"></div>
+            <main class="col bg-faded">
+                <div class="container p-3 m-1">
+                    <h2>Home</h2>
+                    <small>Content goes here.</small>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
 </body>
-</html>
+</html> 
