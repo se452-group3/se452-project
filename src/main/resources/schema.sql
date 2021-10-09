@@ -7,6 +7,9 @@ DROP TABLE IF EXISTS dog_walking    CASCADE;
 DROP TABLE IF EXISTS dog_sitting    CASCADE;
 DROP TABLE IF EXISTS dog_grooming   CASCADE;
 
+DROP TABLE IF EXISTS OrderID        CASCADE;
+DROP TABLE IF EXISTS AcceptedJobs   CASCADE;
+DROP TABLE IF EXISTS DogParty       CASCADE;
 
 create table users (
   id serial primary key,
