@@ -28,3 +28,50 @@ create table job_posting (
   offers integer, /*Talk with the team about this one*/
   PRIMARY KEY (jobDate,jobLocation)
 );
+
+
+
+/* Maybe need more unique stuff for each job, not sure yet */
+
+create table product_order (
+	reservationID serial 	primary key,
+	userID        serial,
+	providerID    serial,
+	jobDescp      varchar(500),
+	jobDate       timestamp,
+	jobLocation   varchar(60),
+	productID	    serial /* not sure how this should work, talk with team */
+);
+
+create table dog_walking (
+	reservationID 	serial 	primary key,
+	userID        	serial,
+	providerID    	serial,
+	jobDescp      	varchar(500),
+	jobDate       	timestamp,
+	jobLocation   	varchar(60),
+	totalDistance 	integer
+);
+
+create table dog_sitting (
+	reservationID 	serial 	primary key,
+	userID        	serial,
+	providerID   	  serial,
+	jobDescp     	  varchar(500),
+	jobDate      	  timestamp,
+	jobLocation   	varchar(60),
+	totalTime		    integer
+);
+
+create table dog_grooming (
+	reservationID 	serial 	primary key,
+	userID        	serial,
+	providerID    	serial,
+	jobDescp      	varchar(500),
+	jobDate       	timestamp,
+	jobLocation   	varchar(60),
+	serviceLevel	  integer /* not sure how to rate different levels of services */
+);
+
+
+
