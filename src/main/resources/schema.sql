@@ -1,6 +1,12 @@
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS profile CASCADE;
-DROP TABLE IF EXISTS job_posting CASCADE;
+DROP TABLE IF EXISTS users          CASCADE;
+DROP TABLE IF EXISTS profile        CASCADE;
+DROP TABLE IF EXISTS job_posting    CASCADE;
+
+DROP TABLE IF EXISTS product_order  CASCADE;
+DROP TABLE IF EXISTS dog_walking    CASCADE;
+DROP TABLE IF EXISTS dog_sitting    CASCADE;
+DROP TABLE IF EXISTS dog_grooming   CASCADE;
+
 
 create table users (
   id serial primary key,
@@ -29,8 +35,9 @@ create table job_posting (
   PRIMARY KEY (jobDate,jobLocation)
 );
 
+ 
 
-
+ 
 /* Maybe need more unique stuff for each job, not sure yet */
 
 create table product_order (
