@@ -80,5 +80,29 @@ create table dog_grooming (
 	serviceLevel	  integer /* not sure how to rate different levels of services */
 );
 
+create table OrderID (
+  orderNum integer,
+  total integer,
+  orderDate timestamp,
+  status varchar(20),
+  UID integer,
+  PRIMARY KEY (orderNum),
+  FOREIGN KEY (uid) REFERENCES users(ID)
+);
 
+create table AcceptedJobs (
+  jobID integer,
+  ownerID integer,
+  walkerID integer,
+  jobLocal boolean,
+  PRIMARY KEY (jobID)
+);
+
+create table DogParty (
+  partyDate timestamp,
+  partyLocation varchar(25),
+  RSVP integer,
+  partyID integer,
+  PRIMARY KEY (partyDate, partyLocation)
+);
 
