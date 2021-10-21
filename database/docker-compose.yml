@@ -17,6 +17,8 @@ services:
   nosql:
     container_name: dogparty-mongo
     image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: dogparty_db
     volumes:
       - "~/mongo/data:/data/db"
     restart: always

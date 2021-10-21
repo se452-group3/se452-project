@@ -4,6 +4,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.UUID;
 
 //This is where we define the objects for our tables
 
@@ -11,10 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Users")
 public class User {
-
     @Id
     private int id;
-
-    private String firstname;
-    private String lastname;
+    private String uuid;
+    private String userName;
+    private String password;
+    private String userType;
 }

@@ -16,7 +16,7 @@ public class UserService {
 
     public String getCurrentUser() {
         User user = userRepo.findById(1);
-        return user.getFirstname();
+        return user.getUserName();
     }
 
     //example of a function that will take a User object and save it to the database
