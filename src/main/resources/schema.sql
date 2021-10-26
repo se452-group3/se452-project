@@ -16,16 +16,17 @@ create table users (
   username varchar(20),
   password varchar(20),
   usertype varchar(20),
-  uuid varchar(36)
+  uuid integer
 );
 
 create table profile (
   pid serial PRIMARY KEY,
   uid integer,
   bio varchar(500),
-  pictures integer, /*Placeholder need to talk with team about this*/
+  picturesurl varchar(255), /*Most likely we'll do URL to make it simple*/
   address varchar(60),
-  name varchar(60),
+  firstname varchar(60),
+  lastname varchar(60),
   raiting integer,
   review varchar(500), /*Also need to talk with the group about this one*/
   FOREIGN KEY(uid) REFERENCES users(id)
