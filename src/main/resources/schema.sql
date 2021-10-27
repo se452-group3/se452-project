@@ -97,11 +97,11 @@ create table OrderID (
 );
 
 create table AcceptedJobs (
-  jobID integer,
+  jobid serial,
   ownerID integer,
   walkerID integer,
   jobLocal boolean,
-  PRIMARY KEY (jobID)
+  PRIMARY KEY (jobid)
 );
 
 create table DogParty (

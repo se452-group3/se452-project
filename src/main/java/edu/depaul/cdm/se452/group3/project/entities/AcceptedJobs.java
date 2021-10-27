@@ -5,13 +5,13 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "AcceptedJobs")
+@Table(name = "acceptedjobs")
 public class AcceptedJobs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int jobID;
+    private int jobid;
     private int ownerID;
     private int walkerID;
-    private boolean jobLocal;
+    private boolean joblocal;
 
 }

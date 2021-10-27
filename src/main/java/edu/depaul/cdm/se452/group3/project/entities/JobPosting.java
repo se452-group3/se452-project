@@ -12,6 +12,7 @@ import java.util.Date;
 public class JobPosting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int id;
     public String ownerName;
     public String jobDescp;
     public Timestamp jobDate;
