@@ -1,7 +1,9 @@
 package edu.depaul.cdm.se452.group3.project;
 
+import edu.depaul.cdm.se452.group3.project.dao.AcceptedJobsRepository;
 import edu.depaul.cdm.se452.group3.project.dao.DogSittingRepository;
 import edu.depaul.cdm.se452.group3.project.dao.ProductRepository;
+import edu.depaul.cdm.se452.group3.project.entities.AcceptedJobs;
 import edu.depaul.cdm.se452.group3.project.entities.DogSitting;
 import edu.depaul.cdm.se452.group3.project.entities.Product;
 import org.slf4j.LoggerFactory;
@@ -67,5 +69,18 @@ public class ProjectApplication {
 
 		};
 		}
-	}
 
+	@Bean
+	public CommandLineRunner saveAcceptedJobs(AcceptedJobsRepository repository){
+		return (args) -> {
+			AcceptedJobs acceptedjobs = new AcceptedJobs();
+			acceptedjobs.setJoblocal(true);
+			acceptedjobs.setOwnerID(1);
+			acceptedjobs.setWalkerID(1);
+
+			repository.save(acceptedjobs);
+
+			System.out.println(repository.findAll());
+		};
+	}
+	}
