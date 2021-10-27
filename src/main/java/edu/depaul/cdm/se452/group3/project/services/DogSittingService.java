@@ -11,7 +11,7 @@ public class DogSittingService {
     @Autowired
     private DogSittingRepository dogSittingRepository;
     
-    public DogSitting aDogSitting(DogSitting dogSitting){
+    public DogSitting addDogSitting(DogSitting dogSitting){
         dogSittingRepository.save(dogSitting);
         return dogSitting;
     }
