@@ -1,0 +1,2 @@
+INSERT INTO users (id, username, password, usertype, uuid) VALUES (1,'admin','$2y$10$pHLVYoOyBwp0K/Yyke2nJOFpXJJb3872izCNbcKeh1Go14/S1KYLC', 'admin', '6374cd56-3ba8-11ec-8d3d-0242ac130003');
+-- Login to UI is admin/password

@@ -14,9 +14,9 @@ DROP TABLE IF EXISTS DogParty       CASCADE;
 create table users (
   id serial primary key,
   username varchar(20),
-  password varchar(20),
+  password varchar(60),
   usertype varchar(20),
-  uuid integer
+  uuid uuid
 );
 
 create table profile (
