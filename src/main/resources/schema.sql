@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS users          CASCADE;
-DROP TABLE IF EXISTS profile        CASCADE;
+DROP TABLE IF EXISTS profiles       CASCADE;
 DROP TABLE IF EXISTS job_posting    CASCADE;
 
 DROP TABLE IF EXISTS product_order  CASCADE;
@@ -19,16 +19,15 @@ create table users (
   uuid uuid
 );
 
-create table profile (
+create table profiles (
   pid serial PRIMARY KEY,
   uid integer,
   bio varchar(500),
-  picturesurl varchar(255), /*Most likely we'll do URL to make it simple*/
+  pictureurl varchar(255), /*Most likely we'll do URL to make it simple*/
   address varchar(60),
   firstname varchar(60),
   lastname varchar(60),
-  raiting integer,
-  review varchar(500), /*Also need to talk with the group about this one*/
+  rating integer,
   FOREIGN KEY(uid) REFERENCES users(id)
 );
 

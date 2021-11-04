@@ -5,3 +5,40 @@
 .user-form {
     padding-top: 30px;
 }
+
+.profilePicture{
+    width: 125px;
+}
+
+.editProfileButton{
+    background-color: #4CAF53;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+}
+
+#update-profile-form{
+    margin: 20px;
+    width: 20%;
+    padding: 10px;
+}
+
+#imageurl-profile{
+    width: 400px;
+    height: 100px;
+}
+
+#firstname-profile{
+    width: 400px;
+}
+
+#lastname-profile{
+    width: 400px;
+}
+
+#address-profile{
+    width: 400px;
+    height: 100px;
+}
