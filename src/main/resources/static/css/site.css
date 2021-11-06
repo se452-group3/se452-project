@@ -19,6 +19,38 @@
     font-size: 13px;
 }
 
+.login-button{
+    background-color: #4CAF53;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.create-account-button{
+    background-color: #4CAF53;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    width: 150px;
+    font-weight: bold;
+}
+.cancel-account-button{
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    width: 100px;
+    font-weight: bold;
+}
+
 #update-profile-form{
     margin: 20px;
     width: 20%;
