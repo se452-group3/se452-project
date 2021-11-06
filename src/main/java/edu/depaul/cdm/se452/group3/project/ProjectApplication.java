@@ -29,7 +29,7 @@ public class ProjectApplication {
 
 	//CRUD test for product object
 	@Bean
-	public CommandLineRunner saveCourseReview(ProductRepository repository) {
+	public CommandLineRunner saveProduct(ProductRepository repository) {
 		return (args) -> {
 
 			for(int i=0; i < 5; i++) {
