@@ -38,15 +38,12 @@ public class LoginController {
     }
 
     @GetMapping("/create-account")
-    public String getResetPasswordPage(@RequestParam(value = "error", required = false) String error, Model model) {
+    public String getResetPasswordPage(@RequestParam(value = "error", required = false) String error, Model model, User newUser, Profile newProfile) {
         String errorMsg = null;
         if(error != null) {
             errorMsg = "Username exist choose another one";
         }
         model.addAttribute("error", errorMsg);
-
-        User newUser = new User();
-        Profile newProfile = new Profile();
         model.addAttribute("newUser", newUser);
         model.addAttribute("newProfile", newProfile);
         return "/create-account";
