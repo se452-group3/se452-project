@@ -31,18 +31,17 @@ public class ProjectApplication {
 	@Bean
 	public CommandLineRunner saveProduct(ProductRepository repository) {
 		return (args) -> {
+			repository.deleteAll();
 
-			for(int i=0; i < 5; i++) {
+			for(int i=0; i < 20; i++) {
 				Product product = new Product();
 				product.setId(repository.findAll().size() + 1);
 				product.setPrice(20);
-				product.setCategoryId(String.format("Food %s",i ));
-				product.setProductName(String.format("test %s", i));
-				product.setProductDescription(String.format("test %s", i));
-				product.setProductName(String.format("Test Food%s", i));
-				product.setImageURL("www.google.com");
+				product.setCategoryId("Food");
+				product.setProductName("Wag Dog food");
+				product.setProductDescription("Dog food for dogs");
+				product.setImageURL("https://m.media-amazon.com/images/I/71xBPL2vKaL._AC_SL1500_.jpg");
 				repository.save(product);
-				System.out.println(product);
 			}
 
 			List<Product> allProducts = repository.findAll();
@@ -50,8 +49,6 @@ public class ProjectApplication {
 			for (Product productItem : allProducts) {
 				System.out.println(productItem.getProductName());
 			}
-			repository.deleteAll();
-
 		};
 	}
 
