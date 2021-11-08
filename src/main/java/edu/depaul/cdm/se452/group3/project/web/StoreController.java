@@ -2,11 +2,14 @@ package edu.depaul.cdm.se452.group3.project.web;
 
 import edu.depaul.cdm.se452.group3.project.dao.ProductRepository;
 import edu.depaul.cdm.se452.group3.project.entities.Product;
+import edu.depaul.cdm.se452.group3.project.entities.Profile;
+import edu.depaul.cdm.se452.group3.project.services.ProfileService;
 import edu.depaul.cdm.se452.group3.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,9 @@ public class StoreController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProfileService profileService;
+
     @GetMapping("/store")
     public String home(Model model) {
         List<Product> allProducts = new ArrayList<>();
@@ -23,5 +29,10 @@ public class StoreController {
 
         model.addAttribute("allProducts", allProducts);
         return "store";
+    }
+
+    @ModelAttribute("userProfile")
+    public Profile currentProfile(){
+        return profileService.getCurrentProfile();
     }
 }

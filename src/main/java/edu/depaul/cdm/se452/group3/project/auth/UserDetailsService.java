@@ -27,7 +27,7 @@ public class UserDetailsService implements org.springframework.security.core.use
         User user = userOptional.get();
         return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
                 .password(user.getPassword())
-                .roles(new String[] {"USER"})
+                .roles(new String[] {user.getUsertype().toUpperCase()})
                 .build();
     }
 }
