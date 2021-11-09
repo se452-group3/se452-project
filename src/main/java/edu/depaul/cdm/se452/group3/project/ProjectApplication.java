@@ -14,9 +14,11 @@ import org.springframework.context.annotation.Bean;
 import java.sql.Timestamp;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Logger;
 
 @SpringBootApplication
@@ -33,11 +35,22 @@ public class ProjectApplication {
 		return (args) -> {
 			repository.deleteAll();
 
+			List<String> categories = new ArrayList<>();
+			categories.add("Food");
+			categories.add("Toys");
+			categories.add("Accessories");
+			categories.add("GroomingSupplies");
+
+
+
 			for(int i=0; i < 20; i++) {
+				Random ran = new Random();
+				int x = ran.nextInt(4 - 0);
+				System.out.println(x + "LOOOKHERE");
 				Product product = new Product();
 				product.setId(repository.findAll().size() + 1);
 				product.setPrice(20);
-				product.setCategoryId("Food");
+				product.setCategoryId(categories.get(x));
 				product.setProductName("Wag Dog food");
 				product.setProductDescription("Dog food for dogs");
 				product.setImageURL("https://m.media-amazon.com/images/I/71xBPL2vKaL._AC_SL1500_.jpg");

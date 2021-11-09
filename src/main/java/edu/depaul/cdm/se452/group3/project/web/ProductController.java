@@ -31,9 +31,19 @@ public class ProductController {
 
     @GetMapping("/product/edit/{id}")
     public String editProduct(@PathVariable("id") int id, Model model) {
-        Optional<Product> product = productRepository.findById(id);
+        Product product = productRepository.findById(id);
         System.out.println(product);
         return "product";
+    }
+
+    @GetMapping("/product/delete/{id}")
+    public String deleteProduct(@PathVariable("id") int id, Model model, @RequestParam(value = "filter", required = false) String filter) {
+        productRepository.delete(productRepository.findById(id));
+        if(filter != null){
+            return  "redirect:/store?filter=" + filter;
+        }
+        else
+            return "redirect:/store";
     }
 
     @ModelAttribute("userProfile")

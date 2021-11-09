@@ -14,10 +14,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <label>Categories:</label>
+                            <a th:href="@{'/store'}">All</a>
                             <a th:href="@{'/store?filter=food'}">Food</a>
                             <a th:href="@{'/store?filter=Toys'}">Toys</a>
                             <a th:href="@{'/store?filter=Accessories'}">Accessories</a>
-                            <a th:href="@{'/store?filter=GroomingSupplies' + value}">Grooming Supplies</a>
+                            <a th:href="@{'/store?filter=GroomingSupplies'}">Grooming Supplies</a>
                         </div>
                     </div>
                     <div class="row">
@@ -41,7 +42,8 @@
                                     <a th:href="@{'product/edit/' + ${product.getId()}}">Edit</a>
                                 </button>
                                 <button class="btn">
-                                    <a th:href="@{'product/delete/' + ${product.getId()}}" >Delete</a>
+                                    <a th:if="${filter != null}" th:href="@{'product/delete/' + ${product.getId()} + '?filter=' + ${filter}}" >Delete</a>
+                                    <a th:if="${filter == null}" th:href="@{'product/delete/' + ${product.getId()}}">Delete</a>
                                 </button>
                             </div>
                             <a class="btn btn-lg btn-outline-info btn-block" >Add to cart</a>

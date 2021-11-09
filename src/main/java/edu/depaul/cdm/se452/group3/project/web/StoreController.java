@@ -35,6 +35,7 @@ public class StoreController {
             List<Product> products = allProducts.stream().filter(product -> product.getCategoryId().equalsIgnoreCase(filter)).collect(Collectors.toList());
             allProducts.clear();
             products.forEach(product -> allProducts.add(product));
+            model.addAttribute("filter", filter);
         }
 
         model.addAttribute("allProducts", allProducts);
