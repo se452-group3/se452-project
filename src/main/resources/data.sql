@@ -8,7 +8,7 @@ VALUES (0,
 
 INSERT INTO profiles (bio, pictureurl, address, firstname, lastname, rating, uid)
 VALUES ('Hi My name is admin',
-        'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDgzNDc5NjcyNTQz/portrait-of-john-smith.jpg',
+        'https://cdn.britannica.com/04/171104-050-AEFE3141/Steve-Jobs-iPhone-2010.jpg',
         'DePaul Chicago',
         'John',
         'Smith',
