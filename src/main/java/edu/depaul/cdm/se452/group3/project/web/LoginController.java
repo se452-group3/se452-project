@@ -38,7 +38,7 @@ public class LoginController {
     }
 
     @GetMapping("/create-account")
-    public String getResetPasswordPage(@RequestParam(value = "error", required = false) String error, Model model, User newUser, Profile newProfile) {
+    public String getUserCreationPage(@RequestParam(value = "error", required = false) String error, Model model, User newUser, Profile newProfile) {
         String errorMsg = null;
         if(error != null) {
             errorMsg = "Username exist choose another one";

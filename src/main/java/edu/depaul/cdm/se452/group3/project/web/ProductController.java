@@ -3,14 +3,12 @@ package edu.depaul.cdm.se452.group3.project.web;
 import edu.depaul.cdm.se452.group3.project.dao.ProductRepository;
 import edu.depaul.cdm.se452.group3.project.entities.Product;
 import edu.depaul.cdm.se452.group3.project.entities.Profile;
+import edu.depaul.cdm.se452.group3.project.services.ProductService;
 import edu.depaul.cdm.se452.group3.project.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.Option;
 import java.util.Optional;
@@ -24,9 +22,19 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProductService productService;
+
     @GetMapping("/product/new")
     public String product(Model model) {
+        model.addAttribute("newProduct", new Product());
         return "product";
+    }
+
+    @PostMapping("/product/new")
+    public String addProduct(Product product){
+        productService.productSave(product);
+        return "redirect:/store";
     }
 
     @GetMapping("/product/edit/{id}")
