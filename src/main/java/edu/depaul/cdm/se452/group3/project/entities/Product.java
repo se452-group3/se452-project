@@ -12,9 +12,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Document(collection = "product")
 public class Product {
+    @Transient
+    public static final String SEQ_NAME = "product_seq";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String productName;
     private String productDescription;
