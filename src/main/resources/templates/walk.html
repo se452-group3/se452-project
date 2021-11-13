@@ -12,7 +12,19 @@
             <main class="col bg-faded">
                 <div class="container p-3 m-1">
                     <h2>Book A Walker</h2>
-                    <small>This is dog sitting</small>
+                    <form action="/walk" th:object = "${newWalking}" method = "post">               
+                        <br>
+                        <label class="mt-3" for="walkingJobDescription">Job Description</label>
+                        <textarea id="sitterJobDescription" th:field="*{jobDescption}" ></textarea>
+                        <br>
+                        <label class="mt-3" for="walkingJobLocation">Job Location</label>
+                        <textarea id="sitterJobLocation" th:field="*{jobLocation}"></textarea>
+                        <br>
+                        <label class ="mt-3" for="walkingDistance">Walking Distance</label>
+                        <input id="sitterServiceLevel" type="number" th:field="*{totalDistance}">
+                        <br>
+                        <button type="submit" id="sitterSubmitButton" class="btn mt-3 editProfileButton">Submit</button>
+                    </form>
                 </div>
             </main>
         </div>

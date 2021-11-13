@@ -11,9 +11,12 @@ public class DogWalkingService {
     @Autowired
     private DogWalkingRepository dogWalkingRepository;
 
-    public DogWalking addWalking(DogWalking walking){
+    @Autowired
+    private SeqGeneratorService seqGeneratorService;
+
+    public void addWalking(DogWalking walking){
+        walking.setId(seqGeneratorService.getSeq(walking.SEQ_NAME));
         dogWalkingRepository.save(walking);
-        return walking;
     }
 
 

@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +18,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "dogsitting")
 public class DogSitting {
+    @Transient
+    public static final String SEQ_NAME = "sitter_seq";
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Timestamp jobDate;
     private String jobDescption;

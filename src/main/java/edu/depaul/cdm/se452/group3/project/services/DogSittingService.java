@@ -10,9 +10,12 @@ public class DogSittingService {
 
     @Autowired
     private DogSittingRepository dogSittingRepository;
+
+    @Autowired
+    private SeqGeneratorService seqGeneratorService;
     
-    public DogSitting addDogSitting(DogSitting dogSitting){
+    public void addDogSitting(DogSitting dogSitting){
+        dogSitting.setId(seqGeneratorService.getSeq(dogSitting.SEQ_NAME));
         dogSittingRepository.save(dogSitting);
-        return dogSitting;
     }
 }

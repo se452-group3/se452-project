@@ -16,8 +16,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 @NoArgsConstructor
 @Document(collection = "dogwalking")
 public class DogWalking {
+    @Transient
+    public static final String SEQ_NAME = "walking_seq";
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Timestamp jobDate;
     private String jobDescption;
