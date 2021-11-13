@@ -7,7 +7,8 @@
 }
 
 .profilePicture{
-    width: 125px;
+    max-width: 125px;
+    max-height: 175px;
 }
 
 .editProfileButton{
@@ -66,7 +67,7 @@
     width: 400px;
 }
 
-#lastname-profile{
+#lastname-profile {
     width: 400px;
 }
 
@@ -76,11 +77,59 @@
 }
 
 .product-image {
-    width: 60px;
-    height: 100px;
+    max-width: 125px;
+    max-height: 175px;
 }
 
 .img-thumbnail{
     width: 50px;
     height: 50px;
+}
+
+#update-product-form{
+    margin: 20px;
+    width: 20%;
+    padding: 10px;
+}
+
+#update-profile-form{
+    margin: 20px;
+    width: 20%;
+    padding: 10px;
+}
+
+#imageurl-profile{
+    width: 400px;
+    height: 100px;
+}
+
+.picture-product{
+    width: 125px;
+    max-height: 150px;
+}
+
+#description-product{
+    width: 400px;
+    height: 100px;
+}
+
+#imageurl-product{
+    width: 400px;
+}
+
+#name-product {
+    width: 400px;
+}
+
+#price-product {
+    width: 400px;
+}
+
+#category-product {
+    width: 400px;
+}
+
+#address-profile{
+    width: 400px;
+    height: 100px;
 }

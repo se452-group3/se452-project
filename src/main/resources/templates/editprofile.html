@@ -13,16 +13,16 @@
             <div class="container p-3 m-1">
                 <h2>Profile</h2>
                 <form action="/editprofile/update" th:object="${userProfile}" method="post" id="update-profile-form">
-                    <img class="profilePicture" th:src="*{pictureurl}"></img>
+                    <img class="profilePicture" id="profilePicture" th:src="*{pictureurl}">
                     <br>
                     <label class="mt-3" for="imageurl-profile">Image URL</label>
                     <textarea id="imageurl-profile" th:field="*{pictureurl}" ></textarea>
                     <br>
                     <label class="mt-3" for="firstname-profile">Firstname</label>
-                    <input id="firstname-profile" th:field="*{firstname}" ></input>
+                    <input id="firstname-profile" th:field="*{firstname}" >
                     <br>
                     <label class="mt-3" for="lastname-profile">Lastname</label>
-                    <input id="lastname-profile" th:field="*{lastname}" ></input>
+                    <input id="lastname-profile" th:field="*{lastname}" >
                     <br>
                     <label class="mt-3" for="address-profile">Address</label>
                     <textarea id="address-profile" th:field="*{address}" ></textarea>
@@ -35,5 +35,6 @@
 </div>
 
 <div th:replace="fragments/footer :: footer"></div>
+<script th:src="@{/js/profile.js}"></script>
 </body>
 </html>

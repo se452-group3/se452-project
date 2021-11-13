@@ -17,7 +17,8 @@ public class ProductService {
     private SeqGeneratorService seqGeneratorService;
 
     public void productSave(Product product){
-        product.setId(seqGeneratorService.getSeq(product.SEQ_NAME));
+        if (product.getId() == 0)
+            product.setId(seqGeneratorService.getSeq(product.SEQ_NAME));
         productRepo.save(product);
 
     }

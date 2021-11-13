@@ -40,6 +40,7 @@ public class ProductController {
     @GetMapping("/product/edit/{id}")
     public String editProduct(@PathVariable("id") int id, Model model) {
         Product product = productRepository.findById(id);
+        model.addAttribute("newProduct", product);
         System.out.println(product);
         return "product";
     }
