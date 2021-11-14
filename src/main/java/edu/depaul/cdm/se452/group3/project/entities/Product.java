@@ -20,7 +20,7 @@ public class Product {
     private String productName;
     private String productDescription;
     private String CategoryId;
-    private int Price;
+    private float Price;
     private String imageURL;
 
 }
