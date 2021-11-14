@@ -21,6 +21,7 @@ public class DogWalking {
 
     @Id
     private int id;
+    private String jobDateHolder;
     private Timestamp jobDate;
     private String jobDescption;
     private String jobLocation;

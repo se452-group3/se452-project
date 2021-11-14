@@ -12,10 +12,13 @@
             <main class="col bg-faded">
                 <div class="container p-3 m-1">
                     <h2>Book A Walker</h2>
-                    <form action="/walk" th:object = "${newWalking}" method = "post">               
+                    <form action="/walk" th:object = "${newWalking}" method = "post"> 
+                        <br>
+                        <label class="mt-3" for="walkingDate">Schedule Date</label>
+                        <input id="walkingDate" type ="datetime-local" th:field="*{jobDateHolder}">          
                         <br>
                         <label class="mt-3" for="walkingJobDescription">Job Description</label>
-                        <textarea id="sitterJobDescription" th:field="*{jobDescption}" ></textarea>
+                        <textarea id="sitterJobDescription" th:field="*{jobDescption}"></textarea>
                         <br>
                         <label class="mt-3" for="walkingJobLocation">Job Location</label>
                         <textarea id="sitterJobLocation" th:field="*{jobLocation}"></textarea>
