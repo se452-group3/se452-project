@@ -20,6 +20,10 @@ public class ProductService {
         if (product.getId() == 0)
             product.setId(seqGeneratorService.getSeq(product.SEQ_NAME));
         productRepo.save(product);
+    }
 
+    public Product getProduct(int productid){
+        Product product = productRepo.findById(productid);
+        return product;
     }
 }

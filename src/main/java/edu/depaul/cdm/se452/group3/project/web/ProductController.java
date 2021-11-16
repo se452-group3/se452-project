@@ -5,6 +5,7 @@ import edu.depaul.cdm.se452.group3.project.entities.Product;
 import edu.depaul.cdm.se452.group3.project.entities.Profile;
 import edu.depaul.cdm.se452.group3.project.services.ProductService;
 import edu.depaul.cdm.se452.group3.project.services.ProfileService;
+import edu.depaul.cdm.se452.group3.project.services.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,9 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private ShoppingCartService shoppingCartService;
 
     @GetMapping("/product/new")
     public String product(Model model) {
@@ -58,5 +62,10 @@ public class ProductController {
     @ModelAttribute("userProfile")
     public Profile currentProfile(){
         return profileService.getCurrentProfile();
+    }
+    @ModelAttribute("cartSize")
+
+    public void populateCartModel(Model model){
+        model.addAttribute("cartSize", shoppingCartService.getCartSize());
     }
 }
