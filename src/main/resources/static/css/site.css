@@ -300,3 +300,18 @@ hr.light-max{
     margin-top: .8rem;
     margin-bottom: 1rem;
 }
+
+.dogPartyForm {
+   width:  500px;
+   margin: auto;
+}
+
+.dogPartyTextAreaF {
+    resize: none;
+}
+
+.sitWalkImage {
+    width: 100%;
+    height: 75%;
+    margin: auto;
+}
