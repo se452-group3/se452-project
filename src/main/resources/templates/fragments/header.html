@@ -13,16 +13,15 @@
         <i class="fa fa-bone fa-2x"></i>
         <span class="pl-lg-2 h2">Dog Party</span>
     </a>
+
     <a class="btn btn-danger ml-auto mr-1" href="/logout">Sign Out</a>
     <ul class="navbar-nav flex-row">
         <li class="nav-item pl-2" th:switch="${userProfile.getPictureurl().isEmpty()}" >
             <a th:case="${false}" class="nav-link" href="/editprofile"><img class="img-thumbnail rounded-circle border-0 border border-light" th:if="${!userProfile.getPictureurl().isEmpty()}" th:src="${userProfile.getPictureurl()}" alt=""> </a>
             <a th:case="${true}" class="nav-link" href="/editprofile"><i class="fa fa-user-circle fa-lg"></i></a>
         </li>
-        <li class="nav-item pl-2">
-            <a class="nav-link" href="#"><i class="fa fa-bell-o fa-lg"></i></a>
-        </li>
     </ul>
+    <a class="nav-link btn-dark" href="/cart"><i class="fa fa-shopping-cart fa-fw" th:text="${'(' + cartSize + ')'}"></i></a>
 </nav>
 
 <aside th:fragment="sidebar" class="col-12 col-sm-3 col-xl-2 p-0 bg-dark flex-shrink">

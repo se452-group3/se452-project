@@ -19,7 +19,6 @@
                             <a class="filter-button-text store-filters-button" th:href="@{'/store?filter=Toys'}">Toys</a>
                             <a class="filter-button-text store-filters-button" th:href="@{'/store?filter=Accessories'}">Accessories</a>
                             <a class="filter-button-text store-filters-button" th:href="@{'/store?filter=GroomingSupplies'}">Grooming Supplies</a>
-
                             <button class="btn newproduct-button" sec:authorize="hasRole('ADMIN')">
                                 <a class="newproduct-button-text" th:href="@{'product/new'}" >Add Product</a>
                             </button>
@@ -44,7 +43,9 @@
                                     <a class="delete-button-text" th:if="${filter == null}" th:href="@{'product/delete/' + ${product.getId()}}">Delete</a>
                                 </button>
                             </div>
-                            <a class="btn btn-lg btn-outline-info btn-block" >Add to cart</a>
+                            <form action="/create-account" th:action="${'/cart/add/' + product.getId()}" method="post" id="addToCart">
+                                <button type="submit" class="btn btn-lg btn-outline-info btn-block">Add to cart</button>
+                            </form>
                         </ul>
                 </div>
                 </div>

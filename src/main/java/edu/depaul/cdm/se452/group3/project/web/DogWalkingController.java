@@ -4,6 +4,7 @@ import edu.depaul.cdm.se452.group3.project.entities.DogWalking;
 import edu.depaul.cdm.se452.group3.project.entities.Profile;
 import edu.depaul.cdm.se452.group3.project.services.DogWalkingService;
 import edu.depaul.cdm.se452.group3.project.services.ProfileService;
+import edu.depaul.cdm.se452.group3.project.services.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,10 @@ public class DogWalkingController {
     @Autowired
     private DogWalkingService dogWalkingService;
 
+    @Autowired
+    private ShoppingCartService shoppingCartService;
+
+
     @GetMapping("/walk")
     public String walk(Model model){
         model.addAttribute("newWalking", new DogWalking());
@@ -33,6 +38,11 @@ public class DogWalkingController {
     @ModelAttribute("userProfile")
     public Profile currentProfile(){
         return profileService.getCurrentProfile();
+    }
+
+    @ModelAttribute("cartSize")
+    public void populateCartModel(Model model){
+        model.addAttribute("cartSize", shoppingCartService.getCartSize());
     }
 
     @PostMapping("/walk")

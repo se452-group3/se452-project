@@ -155,6 +155,24 @@ html,body{
     max-height: 175px;
 }
 
+#card-id {
+    width: 18rem;
+    flex-direction: row;
+    margin: 10px;
+}
+#card-id img {
+    width: 30%;
+}
+
+#card-body-id {
+    flex-direction: row;
+}
+
+/*.product-image-cart {*/
+/*    max-width: 25px;*/
+/*    max-height: 30px;*/
+/*}*/
+
 .img-thumbnail{
     width: 50px;
     height: 50px;
@@ -299,4 +317,19 @@ hr.light-max{
     width: 100%;
     margin-top: .8rem;
     margin-bottom: 1rem;
+}
+
+.dogPartyForm {
+   width:  500px;
+   margin: auto;
+}
+
+.dogPartyTextAreaF {
+    resize: none;
+}
+
+.sitWalkImage {
+    width: 100%;
+    height: 75%;
+    margin: auto;
 }
