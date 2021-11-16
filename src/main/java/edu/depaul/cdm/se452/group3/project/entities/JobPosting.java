@@ -8,15 +8,16 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "job_posting")
+@Table(name = "jobposting")
 public class JobPosting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
-    public String ownerName;
-    public String jobDescp;
-    public Timestamp jobDate;
-    public String jobLocation;
+    public String ownername;
+    public String jobdscp;
+    private String jobdateholder;
+    public Timestamp jobdate;
+    public String joblocation;
     public int offers;
 
 }

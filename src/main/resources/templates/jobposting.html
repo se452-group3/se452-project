@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org ">
 <head th:replace="fragments/header :: header(page='home')">
-    <title>Home</title>
+    <title>Job Postings</title>
 </head>
 <body>
 <div th:replace="fragments/header :: navbar"></div>
@@ -13,6 +14,22 @@
             <div class="container p-3 m-1">
                 <h2>Current Job Postings</h2>
                 <small>Add current job postings.</small>
+                <form action="/jobposting" th:object="${newJob}" method="post">
+                    <br>
+                    <label class="mt-3" for="ownername">Owner Name</label>
+                    <textarea id="ownername" th:field="*{ownername}"></textarea>
+                    <br>
+                    <label class="mt-3" for="jobdescp">Job Description</label>
+                    <textarea id="jobdescp" th:field="*{jobdescp}"></textarea>
+                    <br>
+                    <label class="mt-3" for="jobdate">Schedule Date</label>
+                    <input id="jobdate" type="datetime-local" th:field="*{jobDateHolder}">
+                    <br>
+                    <label class="mt-3" for="joblocation">Job Location</label>
+                    <textarea id="joblocation" th:field="*{joblocation}"></textarea>
+                    <br>
+                    <button type="submit" id="sitterSubmitButton" class="btn mt-3 editProfileButton">Submit</button>
+                </form>
             </div>
         </main>
     </div>
