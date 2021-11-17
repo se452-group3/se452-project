@@ -11,7 +11,7 @@
         <div th:replace="fragments/header :: sidebar"></div>
         <main class="col bg-faded">
             <div class="row" th:if="${!acceptedJobs.isEmpty()}" >
-                <div class="col-xl card ml-4 my-3 mx-3"   th:each="acceptedJob : ${acceptedJobs}">
+                <div class="col-xl ml-4 my-3 mx-3"   th:each="acceptedJob : ${acceptedJobs}">
                     <div class="card-body">
                         <h2>Accepted Jobs</h2>
                         <table class="table table-dark">
