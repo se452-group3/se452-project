@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/header :: header(page='grooming')">
+    <title>Dog Grooming</title>
+</head>
+
+<body>
+    <div th:replace="fragments/header :: navbar"></div>
+
+    <div class="container-fluid">
+        <div class="row wrapper min-vh-100 flex-column flex-sm-row">
+            <div th:replace="fragments/header :: sidebar"></div>
+
+            <main class="col bg-faded">
+                <div class="container p-3 m-1">
+                    <h2>Book A Grooming</h2>
+                </div>
+
+
+
+                <! meat of the page >
+                <div class="row">
+
+                    <! job ID is generated automatically inside the service thing >
+                    <div class="col-6">
+                        <form action="/grooming" th:object = "${newGrooming}" method = "post" class="dogPartyForm main-form needs-validation" novalidate>
+
+                            <! job date field (timestamp?) >
+                            <div class="form-group">
+                                <label class="mt-3" for="groomingDate">Schedule Date</label>
+                                <input id="groomingDate" type ="datetime-local" th:field="*{jobDateHolder}" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a date.</div>
+                            </div>
+
+                            <! job description field (string) >
+                            <div class="form-group">
+                                <label class="mt-3" for="groomingJobDescription">Job Description</label>
+                                <textarea id="groomingJobDescription" th:field="*{jobDescription}" class="form-control dogPartyTextAreaF" required></textarea>
+                                <div class="invalid-feedback">Please enter a job description.</div>
+                            </div>
+
+                            <! job location field (string) >
+                            <div class="form-group">
+                                <label class="mt-3" for="groomingJobLocation">Job Location</label>
+                                <textarea id="groomingJobLocation" th:field="*{jobLocation}" class="form-control dogPartyTextAreaF" required></textarea>
+                                <div class="invalid-feedback">Please enter a job location.</div>
+                            </div>
+
+                            <! service level field (integer) >
+                            <div class="from-group">
+                                <label class ="mt-3" for="groomingServiceLevel">Service Level</label>
+                                <input id="groomingServiceLevel" type="number" min="1" th:field="*{serviceLevel}" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a number greater than zero.</div>
+                            </div>
+
+                            <! submit button >
+                            <button type="submit" id="groomingSubmitButton" class="btn mt-3 editProfileButton">Submit</button>
+
+                        </form>
+                    </div>
+
+
+                    <! For the image on the page >
+                    <div class="col-6">
+                        <img src="/img/groomingImage.png" class="sitWalkImage">
+                    </div>
+
+
+                </div>
+                <! end of meat >
+
+
+
+            </main>
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+
+        <script>
+            var form = document.querySelector('.needs-validation');
+            form.addEventListener('submit', function(event){
+                if(form.checkValidity() === false){
+                    event.preventDefault();
+                    event.stopPropagation();
+                }else{
+                    alert("Job has been created!");
+                }
+                form.classList.add('was-validated');
+            })
+        </script>
+
+</body>
+</html>
