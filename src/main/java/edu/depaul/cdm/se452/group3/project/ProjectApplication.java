@@ -104,99 +104,15 @@ public class ProjectApplication {
 			dogSitTesting.setJobDescption("testtqwqdqwdw");
 			dogSitTesting.setServiceLevel(5);
 			dogSitTesting.setJobLocation("San Jose");
-			dogSitTesting.setJobDateHolder("2021-12-27T1:30");
+			dogSitTesting.setId(1);
 
-			service.addDogSitting(dogSitTesting);
+			repository.save(dogSitTesting);
 
-			DogSitting dogSitTesting2 = new DogSitting();
-			dogSitTesting2.setJobDescption("Sitting for my two pitbulls");
-			dogSitTesting2.setServiceLevel(5);
-			dogSitTesting2.setJobLocation("Lincoln Park");
-			dogSitTesting2.setJobDateHolder("2021-11-25T1:45");
-
-			service.addDogSitting(dogSitTesting2);
-
-
-			DogSitting dogSitTesting3 = new DogSitting();
-			dogSitTesting3.setJobDescption("Dog-sit my Rhodesian Ridgeback named Jack");
-			dogSitTesting3.setServiceLevel(5);
-			dogSitTesting3.setJobLocation("Lakeview");
-			dogSitTesting3.setJobDateHolder("2021-11-19T2:45");
-
-			service.addDogSitting(dogSitTesting3);
-
-
-			DogSitting dogSitTesting4 = new DogSitting();
-			dogSitTesting4.setJobDescption("Keep my poodle name Apollo company");
-			dogSitTesting4.setServiceLevel(3);
-			dogSitTesting4.setJobLocation("Lakeview East");
-			dogSitTesting4.setJobDateHolder("2021-11-30T4:30");
-
-			service.addDogSitting(dogSitTesting4);
-
-			DogSitting dogSitTesting5 = new DogSitting();
-			dogSitTesting5.setJobDescption("Sit for my Irish Wolfhound named Duke.");
-			dogSitTesting5.setServiceLevel(1);
-			dogSitTesting5.setJobLocation("Oak Park");
-			dogSitTesting5.setJobDateHolder("2021-11-29T1:45");
-
-			service.addDogSitting(dogSitTesting5);
 
 
 		};
 	}
 
-	@Bean
-	public CommandLineRunner saveDogWalking(DogWalkingRepository repository, DogWalkingService service) {
-		return (args) -> {
-			repository.deleteAll();
-
-			DogWalking dogWalking = new DogWalking();
-			dogWalking.setJobLocation("Chicago, IL");
-			dogWalking.setJobDescption("Walking my 4 year old terrier Max.");
-			dogWalking.setTotalDistance(2);
-			dogWalking.setJobDateHolder("2021-11-29T1:45");
-
-			service.addWalking(dogWalking);
-
-
-
-			DogWalking dogWalking2 = new DogWalking();
-			dogWalking2.setJobLocation("Chicago, IL");
-			dogWalking2.setJobDescption("Walking my 6 month golden retriever Julie");
-			dogWalking2.setTotalDistance(4);
-			dogWalking2.setJobDateHolder("2021-11-19T6:45");
-
-			service.addWalking(dogWalking2);
-
-
-			DogWalking dogWalking3 = new DogWalking();
-			dogWalking3.setJobLocation("Aurora, IL");
-			dogWalking3.setJobDescption("Walking my pitbull Fido");
-			dogWalking3.setTotalDistance(4);
-			dogWalking3.setJobDateHolder("2021-12-14T9:45");
-
-			service.addWalking(dogWalking3);
-
-
-			DogWalking dogWalking4 = new DogWalking();
-			dogWalking4.setJobLocation("Wheaton, IL");
-			dogWalking4.setJobDescption("Walking my Great Dane marbles");
-			dogWalking4.setTotalDistance(5);
-			dogWalking4.setJobDateHolder("2021-12-23T2:45");
-
-			service.addWalking(dogWalking4);
-
-
-			DogWalking dogWalking5 = new DogWalking();
-			dogWalking5.setJobLocation("Rosemont, IL");
-			dogWalking5.setJobDescption("Walking my 2 year old Chihuahua Pepe");
-			dogWalking5.setTotalDistance(2);
-			dogWalking5.setJobDateHolder("2021-12-26T12:45");
-
-			service.addWalking(dogWalking5);
-		};
-	}
 
 	@Bean
 	public CommandLineRunner saveAcceptedJobs(AcceptedJobsRepository repository){
