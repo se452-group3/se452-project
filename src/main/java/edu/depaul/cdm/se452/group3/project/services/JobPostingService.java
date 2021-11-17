@@ -17,7 +17,7 @@ public class JobPostingService {
     @Autowired
     private JobPostingRepository jobPostingRepository;
 
-    public void addJobPosing(JobPosting jobPosting) {
+    public void addJobPosting(JobPosting jobPosting) {
         DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm");
         Date jobDate = new Date();
         try {

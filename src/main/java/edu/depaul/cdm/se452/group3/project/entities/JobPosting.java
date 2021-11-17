@@ -14,7 +14,7 @@ public class JobPosting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public String ownername;
-    public String jobdscp;
+    public String jobdescp;
     private String jobdateholder;
     public Timestamp jobdate;
     public String joblocation;

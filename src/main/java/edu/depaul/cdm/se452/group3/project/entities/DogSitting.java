@@ -28,4 +28,5 @@ public class DogSitting {
     private String jobDescption;
     private String jobLocation;
     private int serviceLevel;
+
 }
