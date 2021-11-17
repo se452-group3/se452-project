@@ -8,6 +8,7 @@ import edu.depaul.cdm.se452.group3.project.services.ReviewsService;
 import edu.depaul.cdm.se452.group3.project.services.ShoppingCartService;
 import edu.depaul.cdm.se452.group3.project.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 import java.util.List;
 
-@RequestMapping("/reviews")
+@Controller
 public class ReviewsController {
     @Autowired
     private ReviewsRepository reviewsRepository;
