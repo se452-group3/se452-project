@@ -10,27 +10,29 @@
     <div class="row wrapper min-vh-100 flex-column flex-sm-row">
         <div th:replace="fragments/header :: sidebar"></div>
         <main class="col bg-faded">
-            <div class="row" th:if="${!reviews.isEmpty()}" >
-                <div class="col-xl ml-4 my-3 mx-3"   th:each="review : ${reviews}">
-                    <div class="card-body">
-                        <h2>Reviews</h2>
-                        <table class="table table-dark">
-                            <thead>
-                            <tr>
-                                <th>User ID</th>
-                                <th>Comment</th>
-                                <th>Rating</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td th:text="${review.getUID()}"></td>
-                                <td th:text="${review.getComment()}"></td>
-                                <td th:text="${review.getRating()}"></td>
-                            </tr>
-                            </tbody>
-                        </table>
+            <h2>Reviews</h2>
+            <table class="table table-dark">
+                <div class="row" th:if="${!reviews.isEmpty()}" >
+                    <div class="col-xl ml-4 my-3 mx-3"   th:each="review : ${reviews}">
+                        <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Comment</th>
+                            <th>Rating</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td th:text="${review.getUID()}"></td>
+                            <td th:text="${review.getComment()}"></td>
+                            <td th:text="${review.getRating()}"></td>
+                        </tr>
+                        </tbody>
                     </div>
+                    </div>
+                        </table>
+                </main>
+                </div>
                 </div>
             </div>
         </main>
