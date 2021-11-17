@@ -27,7 +27,7 @@ public class DogParty {
     // for sure used
     public String       jobDescription;
     public String       jobLocation;
-    public int          serviceLevel;
+    //public int          serviceLevel;
 
 
 }

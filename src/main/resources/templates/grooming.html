@@ -14,6 +14,7 @@
             <main class="col bg-faded">
                 <div class="container p-3 m-1">
                     <h2>Book A Grooming</h2>
+                    <p>Choose from one of our packages to create your Dog Grooming request!</p>
                 </div>
 
 
@@ -27,31 +28,43 @@
 
                             <!-- job date field (timestamp?) -->
                             <div class="form-group">
-                                <label class="mt-3" for="groomingDate">Schedule Date</label>
+                                <label class="mt-3" for="groomingDate">Schedule a Date</label>
                                 <input id="groomingDate" type ="datetime-local" th:field="*{jobDateHolder}" class="form-control" required>
                                 <div class="invalid-feedback">Please enter a date.</div>
                             </div>
 
+                            <!-- service package field (String) -->
+                            <div class="from-group">
+                                <label>Select a Package:</label>
+                                <select class="form-control" th:field="*{jobPackage}">
+                                    <option value="Haircut">                          Haircut</option>
+                                    <option value="Haircut and Nail Trimming">        Haircut and Nail Trimming</option>
+                                    <option value="Haircut, Nail Trimming, and Bath"> Haircut, Nail Trimming, and Bath</option>
+                                </select>
+                            </div>
+
                             <!-- job description field (string) -->
                             <div class="form-group">
-                                <label class="mt-3" for="groomingJobDescription">Job Description</label>
+                                <label class="mt-3" for="groomingJobDescription">Enter your dog's grooming preferences!</label>
                                 <textarea id="groomingJobDescription" th:field="*{jobDescription}" class="form-control dogPartyTextAreaF" required></textarea>
                                 <div class="invalid-feedback">Please enter a job description.</div>
                             </div>
 
                             <!-- job location field (string) -->
                             <div class="form-group">
-                                <label class="mt-3" for="groomingJobLocation">Job Location</label>
+                                <label class="mt-3" for="groomingJobLocation">What are your location preferences for the job?</label>
                                 <textarea id="groomingJobLocation" th:field="*{jobLocation}" class="form-control dogPartyTextAreaF" required></textarea>
                                 <div class="invalid-feedback">Please enter a job location.</div>
                             </div>
 
                             <!-- service level field (integer) -->
+<!--
                             <div class="from-group">
                                 <label class ="mt-3" for="groomingServiceLevel">Service Level</label>
                                 <input id="groomingServiceLevel" type="number" min="1" th:field="*{serviceLevel}" class="form-control" required>
                                 <div class="invalid-feedback">Please enter a number greater than zero.</div>
                             </div>
+-->
 
                             <!-- submit button -->
                             <button type="submit" id="groomingSubmitButton" class="btn mt-3 editProfileButton">Submit</button>

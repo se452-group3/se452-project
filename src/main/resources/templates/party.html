@@ -13,7 +13,8 @@
 
         <main class="col bg-faded">
             <div class="container p-3 m-1">
-                <h2>Book A Party</h2>
+                <h2>Schedule a Dog Party!</h2>
+                <p>Meet up with fellow dog lovers in your area to walk and play together so you don't have to go out alone!</p>
             </div>
 
 
@@ -27,31 +28,31 @@
 
                         <!-- job date field (timestamp?) -->
                         <div class="form-group">
-                            <label class="mt-3" for="partyDate">Schedule Date</label>
+                            <label class="mt-3" for="partyDate">Schedule a Date</label>
                             <input id="partyDate" type ="datetime-local" th:field="*{jobDateHolder}" class="form-control" required>
                             <div class="invalid-feedback">Please enter a date.</div>
                         </div>
 
                         <!-- job description field (string) -->
                         <div class="form-group">
-                            <label class="mt-3" for="partyJobDescription">Job Description</label>
+                            <label class="mt-3" for="partyJobDescription">Party Description</label>
                             <textarea id="partyJobDescription" th:field="*{jobDescription}" class="form-control dogPartyTextAreaF" required></textarea>
                             <div class="invalid-feedback">Please enter a job description.</div>
                         </div>
 
                         <!-- job location field (string) -->
                         <div class="form-group">
-                            <label class="mt-3" for="partyJobLocation">Job Location</label>
+                            <label class="mt-3" for="partyJobLocation">Where to meet up?</label>
                             <textarea id="partyJobLocation" th:field="*{jobLocation}" class="form-control dogPartyTextAreaF" required></textarea>
                             <div class="invalid-feedback">Please enter a job location.</div>
                         </div>
 
                         <!-- service level field (integer) -->
-                        <div class="from-group">
+<!--                        <div class="from-group">
                             <label class ="mt-3" for="partyServiceLevel">Service Level</label>
                             <input id="partyServiceLevel" type="number" min="1" th:field="*{serviceLevel}" class="form-control" required>
                             <div class="invalid-feedback">Please enter a number greater than zero.</div>
-                        </div>
+                        </div>-->
 
                         <!-- submit button -->
                         <button type="submit" id="partySubmitButton" class="btn mt-3 editProfileButton">Submit</button>
