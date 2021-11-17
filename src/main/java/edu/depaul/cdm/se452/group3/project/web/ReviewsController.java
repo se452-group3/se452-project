@@ -34,14 +34,26 @@ public class ReviewsController {
     @Autowired
     private ShoppingCartService shoppingCartService;
 
-    @GetMapping
+    @GetMapping("/reviews")
     public String reviews (Model model) {
         List<Reviews> reviews = new ArrayList<>();
         reviewsRepository.findAll().forEach(review -> reviews.add(review));
 
+        model.addAttribute("reviews", reviews);
         return "reviews";
     }
 
+    @GetMapping("/add")
+    public String showAddStudent(Reviews review){
+        return "add-review";
+    }
+
+    @PostMapping
+    public String add(Reviews review, Model model){
+        reviewsService.addReview(review);
+        model.addAttribute("reviews", reviewsService.findAll());
+        return "redirect:/reviews";
+    }
 
     @ModelAttribute("userProfile")
     public Profile currentProfile(){

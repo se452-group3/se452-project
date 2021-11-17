@@ -3,6 +3,8 @@ package edu.depaul.cdm.se452.group3.project.web;
 import edu.depaul.cdm.se452.group3.project.dao.DogSittingRepository;
 import edu.depaul.cdm.se452.group3.project.dao.DogWalkingRepository;
 import edu.depaul.cdm.se452.group3.project.dao.JobPostingRepository;
+import edu.depaul.cdm.se452.group3.project.entities.DogSitting;
+import edu.depaul.cdm.se452.group3.project.entities.DogWalking;
 import edu.depaul.cdm.se452.group3.project.entities.JobPosting;
 import edu.depaul.cdm.se452.group3.project.entities.Profile;
 import edu.depaul.cdm.se452.group3.project.services.*;
@@ -47,11 +49,14 @@ public class JobPostingController {
 
     @GetMapping("/jobposting")
     public String jobs (Model model){
-        List<JobPosting> jobs = new ArrayList<>();
-        jobPostingRepository.findAll().forEach(job -> jobs.add(job));
+        List<DogWalking> walkingJobs = new ArrayList<>();
+        List<DogSitting> sittingJobs = new ArrayList<>();
 
-        model.addAttribute("jobs", jobs);
+        dogWalkingRepository.findAll().forEach(walk -> walkingJobs.add(walk));
+        dogSittingRepository.findAll().forEach(sit -> sittingJobs.add(sit));
 
+        model.addAttribute("walkingJobs", walkingJobs);
+        model.addAttribute("sittingJobs", sittingJobs);
         return "jobposting";
     }
 
