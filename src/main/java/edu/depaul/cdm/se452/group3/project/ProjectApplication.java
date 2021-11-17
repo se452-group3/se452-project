@@ -113,54 +113,6 @@ public class ProjectApplication {
 		};
 	}
 
-
-	@Bean
-	public CommandLineRunner saveAcceptedJobs(AcceptedJobsRepository repository){
-		return (args) -> {
-			repository.deleteAll();
-
-			AcceptedJobs acceptedjobs = new AcceptedJobs();
-			acceptedjobs.setJoblocal(true);
-			acceptedjobs.setOwnerID(1);
-			acceptedjobs.setWalkerID(1);
-
-			repository.save(acceptedjobs);
-
-
-			AcceptedJobs acceptedjobs2 = new AcceptedJobs();
-			acceptedjobs2.setJoblocal(true);
-			acceptedjobs2.setOwnerID(2);
-			acceptedjobs2.setWalkerID(2);
-
-			repository.save(acceptedjobs2);
-
-
-
-			AcceptedJobs acceptedjobs3 = new AcceptedJobs();
-			acceptedjobs3.setJoblocal(true);
-			acceptedjobs3.setOwnerID(3);
-			acceptedjobs3.setWalkerID(3);
-
-			repository.save(acceptedjobs3);
-
-			AcceptedJobs acceptedjobs4 = new AcceptedJobs();
-			acceptedjobs4.setJoblocal(false);
-			acceptedjobs4.setOwnerID(4);
-			acceptedjobs4.setWalkerID(4);
-
-			repository.save(acceptedjobs4);
-
-			AcceptedJobs acceptedjobs5 = new AcceptedJobs();
-			acceptedjobs5.setJoblocal(false);
-			acceptedjobs5.setOwnerID(5);
-			acceptedjobs5.setWalkerID(5);
-
-			repository.save(acceptedjobs5);
-
-			System.out.println(repository.findAll());
-		};
-	}
-
 	@Bean
 	public CommandLineRunner saveReview(ReviewsRepository repository){
 		return (args) -> {
