@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "Review")
+@Table(name = "reviews")
 public class Reviews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,6 @@ public class Reviews {
     private int PID;
     public String comment;
     public int rating;
-    public Timestamp reviewDate;
 
 
 }

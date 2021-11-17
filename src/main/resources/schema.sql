@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS dog_grooming   CASCADE;
 DROP TABLE IF EXISTS OrderID        CASCADE;
 DROP TABLE IF EXISTS AcceptedJobs   CASCADE;
 DROP TABLE IF EXISTS DogParty       CASCADE;
+DROP TABLE IF EXISTS reviews        CASCADE;
 
 create table users (
   id serial primary key,
@@ -111,4 +112,13 @@ create table DogParty (
   partyID integer,
   PRIMARY KEY (partyDate, partyLocation)
 );
+
+create table reviews (
+  RID serial,
+  UID integer,
+  PID integer,
+  comment varchar(200),
+  rating integer,
+  PRIMARY KEY (RID)
+)
 
