@@ -1,9 +1,14 @@
 package edu.depaul.cdm.se452.group3.project;
 
-import edu.depaul.cdm.se452.group3.project.dao.*;
-import edu.depaul.cdm.se452.group3.project.entities.*;
+
+import edu.depaul.cdm.se452.group3.project.dao.AcceptedJobsRepository;
+import edu.depaul.cdm.se452.group3.project.dao.DogSittingRepository;
+import edu.depaul.cdm.se452.group3.project.dao.ProductRepository;
+import edu.depaul.cdm.se452.group3.project.entities.AcceptedJobs;
+import edu.depaul.cdm.se452.group3.project.entities.DogSitting;
+import edu.depaul.cdm.se452.group3.project.entities.Product;
 import edu.depaul.cdm.se452.group3.project.services.DogSittingService;
-import edu.depaul.cdm.se452.group3.project.services.DogWalkingService;
+
 import edu.depaul.cdm.se452.group3.project.services.ProductService;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +16,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import java.sql.Timestamp;
-import java.time.Instant;
+
+import java.time.LocalDateTime;
+
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -94,23 +101,19 @@ public class ProjectApplication {
 		return (args) -> {
 			repository.deleteAll();
 
+			LocalDateTime now = LocalDateTime.now();
 
 			DogSitting dogSitTesting = new DogSitting();
-			dogSitTesting.setId(repository.findAll().size() + 1);
 			dogSitTesting.setJobDescption("testtqwqdqwdw");
 			dogSitTesting.setServiceLevel(5);
 			dogSitTesting.setJobLocation("San Jose");
+			dogSitTesting.setJobDateHolder(now.toString());
 
-			//dogSitTesting.setJobDateHolder("2021-12-27T18:30");
 
-			//service.addDogSitting(dogSitTesting);
-
-			repository.save(dogSitTesting);
-
-			System.out.println(repository.findAll());
+			service.addDogSitting(dogSitTesting);
 
 		};
-		}
+	}
 
 	@Bean
 	public CommandLineRunner saveDogWalking(DogWalkingRepository repository, DogWalkingService service) {
