@@ -74,7 +74,9 @@ public class ProjectApplication {
 			dogSitTesting.setJobDescption("testtqwqdqwdw");
 			dogSitTesting.setServiceLevel(5);
 			dogSitTesting.setJobLocation("San Jose");
+
 			//dogSitTesting.setJobDateHolder("2021-12-27T18:30");
+
 			//service.addDogSitting(dogSitTesting);
 
 			repository.save(dogSitTesting);

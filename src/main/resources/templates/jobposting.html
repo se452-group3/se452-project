@@ -11,7 +11,7 @@
         <div th:replace="fragments/header :: sidebar"></div>
         <main class="col bg-faded">
             <div class="container p-3 m-1">
-                <h2>Current Job Postings</h2>
+                <h2>Current Open Jobs</h2>
                 <div class="row" th:if="${!walkingJobs.isEmpty()}" >
                     <div class="col-xl ml-4 my-3 mx-3"   th:each="walk : ${walkingJobs}">
                         <div class="card-body">
