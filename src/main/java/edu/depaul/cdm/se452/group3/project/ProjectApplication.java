@@ -75,11 +75,41 @@ public class ProjectApplication {
 			dogSitTesting.setServiceLevel(5);
 			dogSitTesting.setJobLocation("San Jose");
 
-			//dogSitTesting.setJobDateHolder("2021-12-27T18:30");
-
-			//service.addDogSitting(dogSitTesting);
-
 			repository.save(dogSitTesting);
+
+			DogSitting dogSitTesting2 = new DogSitting();
+			dogSitTesting.setId(repository.findAll().size() + 1);
+			dogSitTesting.setJobDescption("Sitting for my two pitbulls");
+			dogSitTesting.setServiceLevel(5);
+			dogSitTesting.setJobLocation("Lincoln Park");
+
+			repository.save(dogSitTesting2);
+
+
+			DogSitting dogSitTesting3 = new DogSitting();
+			dogSitTesting.setId(repository.findAll().size() + 1);
+			dogSitTesting.setJobDescption("Dog-sit my Rhodesian Ridgeback named Jack");
+			dogSitTesting.setServiceLevel(5);
+			dogSitTesting.setJobLocation("Lakeview");
+
+			repository.save(dogSitTesting3);
+
+
+			DogSitting dogSitTesting4 = new DogSitting();
+			dogSitTesting.setId(repository.findAll().size() + 1);
+			dogSitTesting.setJobDescption("Keep my poodle name Apollo company");
+			dogSitTesting.setServiceLevel(3);
+			dogSitTesting.setJobLocation("Lakeview East");
+
+			repository.save(dogSitTesting4);
+
+			DogSitting dogSitTesting5 = new DogSitting();
+			dogSitTesting.setId(repository.findAll().size() + 1);
+			dogSitTesting.setJobDescption("Sit for my Irish Wolfhound named Duke.");
+			dogSitTesting.setServiceLevel(1);
+			dogSitTesting.setJobLocation("Oak Park");
+
+			repository.save(dogSitTesting5);
 
 			System.out.println(repository.findAll());
 
@@ -96,11 +126,47 @@ public class ProjectApplication {
 			dogWalking.setJobLocation("Chicago, IL");
 			dogWalking.setJobDescption("Walking my 4 year old terrier Max.");
 			dogWalking.setTotalDistance(2);
-			//dogWalking.setJobDateHolder("2021-12-27T18:30");
-			//service.addDogWalking(dogWalking);
 
 
 			repository.save(dogWalking);
+
+
+
+			DogWalking dogWalking2 = new DogWalking();
+			dogWalking.setId(2);
+			dogWalking.setJobLocation("Chicago, IL");
+			dogWalking.setJobDescption("Walking my 6 month golden retriever Julie");
+			dogWalking.setTotalDistance(4);
+
+			repository.save(dogWalking2);
+
+
+			DogWalking dogWalking3 = new DogWalking();
+			dogWalking.setId(3);
+			dogWalking.setJobLocation("Aurora, IL");
+			dogWalking.setJobDescption("Walking my pitbull Fido");
+			dogWalking.setTotalDistance(4);
+
+			repository.save(dogWalking3);
+
+
+			DogWalking dogWalking4 = new DogWalking();
+			dogWalking.setId(4);
+			dogWalking.setJobLocation("Wheaton, IL");
+			dogWalking.setJobDescption("Walking my Great Dane marbles");
+			dogWalking.setTotalDistance(5);
+
+			repository.save(dogWalking4);
+
+
+			DogWalking dogWalking5 = new DogWalking();
+			dogWalking.setId(5);
+			dogWalking.setJobLocation("Rosemont, IL");
+			dogWalking.setJobDescption("Walking my 2 year old Chihuahua Pepe");
+
+			repository.save(dogWalking5);
+
+
 
 
 			System.out.println(repository.findAll());
@@ -119,6 +185,37 @@ public class ProjectApplication {
 
 			repository.save(acceptedjobs);
 
+
+			AcceptedJobs acceptedjobs2 = new AcceptedJobs();
+			acceptedjobs.setJoblocal(true);
+			acceptedjobs.setOwnerID(2);
+			acceptedjobs.setWalkerID(2);
+
+			repository.save(acceptedjobs2);
+
+
+
+			AcceptedJobs acceptedjobs3 = new AcceptedJobs();
+			acceptedjobs.setJoblocal(true);
+			acceptedjobs.setOwnerID(3);
+			acceptedjobs.setWalkerID(3);
+
+			repository.save(acceptedjobs3);
+
+			AcceptedJobs acceptedjobs4 = new AcceptedJobs();
+			acceptedjobs.setJoblocal(false);
+			acceptedjobs.setOwnerID(4);
+			acceptedjobs.setWalkerID(4);
+
+			repository.save(acceptedjobs4);
+
+			AcceptedJobs acceptedjobs5 = new AcceptedJobs();
+			acceptedjobs.setJoblocal(false);
+			acceptedjobs.setOwnerID(5);
+			acceptedjobs.setWalkerID(5);
+
+			repository.save(acceptedjobs5);
+
 			System.out.println(repository.findAll());
 		};
 	}
@@ -135,6 +232,39 @@ public class ProjectApplication {
 			review.setRating(5);
 
 			repository.save(review);
+
+
+			Reviews review2 = new Reviews();
+			review.setPID(2);
+			review.setUID(2);
+			review.setComment("My dog has so much more exercise now!");
+			review.setRating(5);
+
+			repository.save(review2);
+
+			Reviews review3 = new Reviews();
+			review.setPID(3);
+			review.setUID(3);
+			review.setComment("During the pandemic I'm able to social-distance and hang out with dogs because of Dog Party!");
+			review.setRating(5);
+
+			repository.save(review3);
+
+			Reviews review4 = new Reviews();
+			review.setPID(4);
+			review.setUID(4);
+			review.setComment("Five stars.");
+			review.setRating(5);
+
+			repository.save(review4);
+
+			Reviews review5 = new Reviews();
+			review.setPID(5);
+			review.setUID(5);
+			review.setComment("Trusted company.");
+			review.setRating(5);
+
+			repository.save(review5);
 
 			System.out.println(repository.findAll());
 		};
