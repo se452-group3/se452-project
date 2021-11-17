@@ -64,6 +64,7 @@ public class ProjectApplication {
 		};
 	}
 
+/*
 	@Bean
 	public CommandLineRunner saveDogSitting(DogSittingRepository repository){
 		return (args) -> {
@@ -78,6 +79,7 @@ public class ProjectApplication {
 
 		};
 		}
+*/
 
 	@Bean
 	public CommandLineRunner saveAcceptedJobs(AcceptedJobsRepository repository){
