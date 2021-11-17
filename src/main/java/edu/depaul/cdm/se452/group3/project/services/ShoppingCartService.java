@@ -3,6 +3,7 @@ package edu.depaul.cdm.se452.group3.project.services;
 import edu.depaul.cdm.se452.group3.project.entities.Product;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 @Service
@@ -34,13 +35,14 @@ public class ShoppingCartService {
         cart.remove(index);
     }
 
-    public float getTotal (){
-        float total = 0;
+    public double getTotal (){
+        DecimalFormat format = new DecimalFormat("0.00");
+        double total = 0;
         for(Product product : cart){
-            float productPrice = product.getPrice();
+            double productPrice = product.getPrice();
             total += productPrice;
         }
-        return total;
+        return  Double.parseDouble(format.format(total));
     }
 
 }

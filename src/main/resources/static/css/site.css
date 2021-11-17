@@ -39,6 +39,29 @@ html,body{
     float: right;
 }
 
+.clearCart {
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+}
+
+.clearCart-button, .clearCart-button-text:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.clearCart-button-text, .clearCart-button-text:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.newproduct-button, .newproduct-button-text:hover{
+    color: white;
+    text-decoration: none;
+}
+
 .newproduct-button-text, .newproduct-button-text:hover{
     color: white;
     text-decoration: none;
@@ -153,6 +176,7 @@ html,body{
 .product-image {
     max-width: 125px;
     max-height: 175px;
+    margin-top: 10px;
 }
 
 #card-id {

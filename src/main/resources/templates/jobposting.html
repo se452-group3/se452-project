@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/header :: header(page='home')">
-    <title>Home</title>
+    <title>Job Postings</title>
 </head>
 <body>
 <div th:replace="fragments/header :: navbar"></div>
@@ -11,8 +11,63 @@
         <div th:replace="fragments/header :: sidebar"></div>
         <main class="col bg-faded">
             <div class="container p-3 m-1">
-                <h2>Current Job Postings</h2>
-                <small>Add current job postings.</small>
+                <h2>Current Open Jobs</h2>
+                <div class="row" th:if="${!walkingJobs.isEmpty()}" >
+                    <div class="col-xl ml-4 my-3 mx-3"   th:each="walk : ${walkingJobs}">
+                        <div class="card-body">
+                            <h3>Dog Walking Jobs</h3>
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Job Date</th>
+                                    <th>Description</th>
+                                    <th>Location</th>
+                                    <th>Distance</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${walk.getId()}"></td>
+                                    <td th:text="${walk.getJobDate()}"></td>
+                                    <td th:text="${walk.getJobDescption()}"></td>
+                                    <td th:text="${walk.getJobLocation()}"></td>
+                                    <td th:text="${walk.getTotalDistance()}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row" th:if="${!sittingJobs.isEmpty()}" >
+                    <div class="col-xl ml-4 my-3 mx-3"   th:each="sit : ${sittingJobs}">
+                        <div class="card-body">
+                            <h3>Dog Sitting Jobs</h3>
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Job Date</th>
+                                    <th>Description</th>
+                                    <th>Location</th>
+                                    <th>Service Level</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${sit.getId}"></td>
+                                    <td th:text="${sit.getJobDate()}"></td>
+                                    <td th:text="${sit.getJobDescption()}"></td>
+                                    <td th:text="${sit.getJobLocation()}"></td>
+                                    <td th:text="${sit.getServiceLevel()}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>

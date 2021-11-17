@@ -10,10 +10,29 @@
     <div class="row wrapper min-vh-100 flex-column flex-sm-row">
         <div th:replace="fragments/header :: sidebar"></div>
         <main class="col bg-faded">
-            <div class="container p-3 m-1">
-                <h2>Accepted Jobs</h2>
-                <small>Add Accepted Jobs</small>
-            </div>
+            <div class="row" th:if="${!acceptedJobs.isEmpty()}" >
+                <div class="col-xl ml-4 my-3 mx-3"   th:each="acceptedJob : ${acceptedJobs}">
+                    <div class="card-body">
+                        <h2>Accepted Jobs</h2>
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th>Job ID</th>
+                                <th>Owner ID</th>
+                                <th>Walker ID</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td th:text="${acceptedJob.getJobid()}"></td>
+                                <td th:text="${acceptedJob.getOwnerID()}"></td>
+                                <td th:text="${acceptedJob.getWalkerID}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
         </main>
     </div>
 </div>
