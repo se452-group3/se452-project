@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS users          CASCADE;
 DROP TABLE IF EXISTS profiles       CASCADE;
-DROP TABLE IF EXISTS job_posting    CASCADE;
+DROP TABLE IF EXISTS jobposting    CASCADE;
 
 DROP TABLE IF EXISTS product_order  CASCADE;
 DROP TABLE IF EXISTS dog_walking    CASCADE;
@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS dog_grooming   CASCADE;
 DROP TABLE IF EXISTS OrderID        CASCADE;
 DROP TABLE IF EXISTS AcceptedJobs   CASCADE;
 DROP TABLE IF EXISTS DogParty       CASCADE;
+DROP TABLE IF EXISTS reviews        CASCADE;
 
 create table users (
   id serial primary key,
@@ -31,11 +32,12 @@ create table profiles (
   FOREIGN KEY(uid) REFERENCES users(id)
 );
 
-create table job_posting (
-  ownerName varchar(60),
-  jobDescp varchar(500),
-  jobDate timestamp,
-  jobLocation varchar(60),
+create table jobposting (
+  ownername varchar(60),
+  jobdescp varchar(500),
+  jobdate timestamp,
+  jobdateholder varchar(30),
+  joblocation varchar(60),
   offers integer, /*Talk with the team about this one*/
   PRIMARY KEY (jobDate,jobLocation)
 );
@@ -85,4 +87,13 @@ create table DogParty (
   partyID integer,
   PRIMARY KEY (partyDate, partyLocation)
 );
+
+create table reviews (
+  RID serial,
+  UID integer,
+  PID integer,
+  comment varchar(200),
+  rating integer,
+  PRIMARY KEY (RID)
+)
 
