@@ -11,16 +11,10 @@ import java.util.Date;
 
 @Data
 
-
-//@Entity
-//@Table(name = "dog_grooming")
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "doggrooming")
 public class DogGrooming {
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Transient // for automatically creating an id for this?
     public static final String SEQ_NAME = "grooming_seq";
 
