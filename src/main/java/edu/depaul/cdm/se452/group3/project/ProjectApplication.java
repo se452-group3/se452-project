@@ -1,14 +1,11 @@
 package edu.depaul.cdm.se452.group3.project;
 
 
-import edu.depaul.cdm.se452.group3.project.dao.AcceptedJobsRepository;
-import edu.depaul.cdm.se452.group3.project.dao.DogSittingRepository;
-import edu.depaul.cdm.se452.group3.project.dao.ProductRepository;
-import edu.depaul.cdm.se452.group3.project.entities.AcceptedJobs;
-import edu.depaul.cdm.se452.group3.project.entities.DogSitting;
-import edu.depaul.cdm.se452.group3.project.entities.Product;
+import edu.depaul.cdm.se452.group3.project.dao.*;
+import edu.depaul.cdm.se452.group3.project.entities.*;
 import edu.depaul.cdm.se452.group3.project.services.DogSittingService;
 
+import edu.depaul.cdm.se452.group3.project.services.DogWalkingService;
 import edu.depaul.cdm.se452.group3.project.services.ProductService;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
