@@ -4,6 +4,6 @@ import edu.depaul.cdm.se452.group3.project.entities.DogGrooming;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 
-public interface DogGroomingRepository extends CrudRepository<DogGrooming, Integer> {
-    DogGrooming findById(int id);
+public interface DogGroomingRepository extends MongoRepository<DogGrooming, Integer> {
+    //DogGrooming findById(int id);
 }

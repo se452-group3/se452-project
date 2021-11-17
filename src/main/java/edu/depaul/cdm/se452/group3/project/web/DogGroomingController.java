@@ -42,7 +42,7 @@ public class DogGroomingController {
     // for initially loading the page
     @GetMapping("/grooming") // what url the server will generate this response
     public String dogGrooming(Model model){
-        model.addAttribute("grooming", new DogGrooming()); // html page to respond with
+        model.addAttribute("newGrooming", new DogGrooming()); // html page to respond with
         return "grooming";
     }
     // POST

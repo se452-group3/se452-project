@@ -12,14 +12,14 @@ import java.util.Date;
 @Data
 
 
-@Entity
-@Table(name = "dog_grooming")
+//@Entity
+//@Table(name = "dog_grooming")
 
 @AllArgsConstructor
 @NoArgsConstructor
-//@Document(collection = "doggrooming")
+@Document(collection = "doggrooming")
 public class DogGrooming {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Transient // for automatically creating an id for this?
     public static final String SEQ_NAME = "grooming_seq";
@@ -28,8 +28,8 @@ public class DogGrooming {
     public int          id;
 
     // may not be actually used
-    public int          userID;
-    public int          providerID;
+    //public int          userID;
+    //public int          providerID;
 
     // for changing the format of the date
     public String       jobDateHolder;

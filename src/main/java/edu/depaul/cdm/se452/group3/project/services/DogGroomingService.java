@@ -17,7 +17,6 @@ public class DogGroomingService {
 
     @Autowired
     private DogGroomingRepository dogGroomingRepository;
-
     @Autowired
     private SeqGeneratorService seqGeneratorService;
 
@@ -25,11 +24,9 @@ public class DogGroomingService {
     // creates and adds a dogGrooming object to the database
     public void addDogGrooming(DogGrooming dogGrooming){
 
-
         // generate ID for our object
         // (by using another service)
         dogGrooming.setId(seqGeneratorService.getSeq(dogGrooming.SEQ_NAME));
-
 
         // grabbing the date from the html form
         // (formatting it for the database before actually adding)
@@ -38,8 +35,7 @@ public class DogGroomingService {
         try { groomingDate = (Date) formatter.parse(dogGrooming.getJobDateHolder()); }
         catch (ParseException e) { e.printStackTrace(); }
         // officially setting the date
-        long tempTime = groomingDate.getTime();
-        dogGrooming.setJobDate(new Timestamp(tempTime));
+        dogGrooming.setJobDate(new Timestamp(  groomingDate.getTime()  ));
 
 
         // done, save the new dogGrooming object to the database
