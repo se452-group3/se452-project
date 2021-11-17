@@ -42,21 +42,6 @@ create table jobposting (
   PRIMARY KEY (jobDate,jobLocation)
 );
 
- 
-
- 
-/* Maybe need more unique stuff for each job, not sure yet */
-
-create table product_order (
-	reservationID serial 	primary key,
-	userID        serial,
-	providerID    serial,
-	jobDescp      varchar(500),
-	jobDate       timestamp,
-	jobLocation   varchar(60),
-	productID	    serial /* not sure how this should work, talk with team */
-);
-
 create table dog_walking (
 	reservationID 	serial 	primary key,
 	userID        	serial,
@@ -85,16 +70,6 @@ create table dog_grooming (
 	jobDate       	timestamp,
 	jobLocation   	varchar(60),
 	serviceLevel	  integer /* not sure how to rate different levels of services */
-);
-
-create table OrderID (
-  orderNum integer,
-  total integer,
-  orderDate timestamp,
-  status varchar(20),
-  UID integer,
-  PRIMARY KEY (orderNum),
-  FOREIGN KEY (uid) REFERENCES users(ID)
 );
 
 create table AcceptedJobs (
