@@ -45,8 +45,20 @@ public class ProductController {
     public String editProduct(@PathVariable("id") int id, Model model) {
         Product product = productRepository.findById(id);
         model.addAttribute("newProduct", product);
-        System.out.println(product);
-        return "product";
+        return "product-edit";
+    }
+
+    @PostMapping("/product/edit/{id}")
+    public String editProduct(@PathVariable("id") int id, Product product) {
+        Product findProduct = productRepository.findById(id);
+        findProduct.setImageURL(product.getImageURL());
+        findProduct.setProductName(product.getProductName());
+        findProduct.setProductDescription(product.getProductDescription());
+        findProduct.setPrice(product.getPrice());
+        findProduct.setCategoryId(product.getCategoryId());
+
+        productService.productSave(findProduct);
+        return "redirect:/store";
     }
 
     @GetMapping("/product/delete/{id}")
