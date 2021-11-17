@@ -23,6 +23,7 @@ public class DogSittingService {
     
     public void addDogSitting(DogSitting dogSitting){
         dogSitting.setId(seqGeneratorService.getSeq(dogSitting.SEQ_NAME));
+
         DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm");
         Date sittingDate = new Date();
         try {
